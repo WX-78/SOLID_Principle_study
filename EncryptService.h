@@ -17,3 +17,19 @@ private:
 	char *doEncrypt(char *content);
 };
 }
+
+namespace goodDesign{
+	#include "IReader.h"
+	#include "IWriter.h"
+	
+	class EncryptService{
+	public:
+		EncryptService();
+		~EncryptService();
+		void encrypt(IReader *r, IWriter *w);
+	
+	private:
+		char *doEncrypt(char *content);
+	};
+}
+

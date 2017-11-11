@@ -1,10 +1,12 @@
-#include "encryptService.h"
+#include "EncryptService.h"
+#include "FileReader.h"
+#include "DatabaseWriter.h"
 
 
-using namespace badDesign;
+using namespace goodDesign;
 int main(){
 	
 	EncryptService es;
-	es.encrypt(eRFile, eWData); 
+	es.encrypt(new FileReader(), new DatabaseWriter()); 
 	return 0;
 }

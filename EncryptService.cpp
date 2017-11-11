@@ -1,4 +1,4 @@
-#include "encryptService.h"
+#include "EncryptService.h"
 
 namespace badDesign{
 EncryptService::EncryptService(){
@@ -62,3 +62,25 @@ void EncryptService::encrypt(SourceContent s, DestContent d){
 	}
 }
 }
+
+namespace goodDesign{
+	EncryptService::EncryptService(){
+	
+	}
+	
+	EncryptService::~EncryptService(){
+	
+	}
+	
+	void EncryptService::encrypt(IReader *r, IWriter *w){
+		char *content = r -> read();
+		char *encryptContent = doEncrypt(content);
+		w -> write(encryptContent);
+	}
+	
+	
+	char *EncryptService::doEncrypt(char *content){
+	
+	}
+}
+
